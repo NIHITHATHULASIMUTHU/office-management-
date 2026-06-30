@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager Dashboard | GoalTrack</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="manager">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Manager Dashboard</p>
+        <h1 id="managerName">Goal Approvals</h1>
+      </div>
+      <div class="top-actions">
+        <button class="bell-button" id="notificationBell" type="button" aria-label="Notifications">
+          <span class="bell-glyph" aria-hidden="true"></span>
+          <strong id="notificationCount">0</strong>
+        </button>
+        <button class="ghost-button" data-logout>Logout</button>
+      </div>
+    </header>
+
+    <main class="dashboard manager-layout">
+      <aside class="panel notification-panel">
+        <div class="panel-header">
+          <h2>Notifications</h2>
+        </div>
+        <div id="notifications" class="notification-list"></div>
+      </aside>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Employees & Submitted Goals</h2>
+          <span class="badge pending">Pending Approval</span>
+        </div>
+        <div id="managerEmployees" class="employee-list"></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

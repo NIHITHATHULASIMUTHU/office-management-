@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard | GoalTrack</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="employee">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Employee Dashboard</p>
+        <h1 id="employeeName">My Goals</h1>
+      </div>
+      <button class="ghost-button" data-logout>Logout</button>
+    </header>
+
+    <main class="dashboard">
+      <section class="summary-strip">
+        <div>
+          <span>Status</span>
+          <strong id="goalStatus">Draft</strong>
+        </div>
+        <div>
+          <span>Goals</span>
+          <strong id="goalCount">0 / 8</strong>
+        </div>
+        <div>
+          <span>Total Weightage</span>
+          <strong id="totalWeight">0%</strong>
+        </div>
+      </section>
+
+      <section class="workspace-grid">
+        <form id="goalForm" class="panel goal-form">
+          <div class="panel-header">
+            <h2>Create Goal</h2>
+            <span class="badge draft" id="formStatusBadge">Draft</span>
+          </div>
+          <input type="hidden" name="goalId" />
+          <label>
+            Goal title
+            <input name="title" required maxlength="80" placeholder="Improve customer onboarding" />
+          </label>
+          <label>
+            Description
+            <textarea name="description" required rows="4" placeholder="Describe what success looks like"></textarea>
+          </label>
+          <label>
+            Target
+            <input name="target" required placeholder="Reduce onboarding time by 20%" />
+          </label>
+          <label>
+            Weightage
+            <input name="weightage" type="number" min="10" max="100" step="1" required placeholder="20" />
+          </label>
+          <label>
+            Proof / attachment
+            <input name="file" type="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.gif,.webp" />
+          </label>
+          <p class="muted compact">Save each goal as a draft first. Submit is allowed only when all saved goals total exactly 100%.</p>
+          <div class="button-row">
+            <button class="primary-button" type="submit">Save Draft Goal</button>
+            <button class="ghost-button" type="button" id="resetForm">Clear</button>
+          </div>
+          <p class="form-error" role="alert"></p>
+          <p class="form-success" role="status"></p>
+        </form>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>My Goal List</h2>
+            <button class="primary-button" id="submitGoals" type="button">Submit Goals</button>
+          </div>
+          <p class="muted compact" id="submitHelp">Submit requires 1-8 saved goals, each at least 10%, with total weightage exactly 100%.</p>
+          <p class="form-error" id="submitError" role="alert"></p>
+          <div id="employeeGoals" class="goal-list"></div>
+        </section>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

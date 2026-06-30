@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager Login | GoalTrack</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="auth-shell">
+      <form class="auth-panel login-form" data-login-role="manager">
+        <a class="back-link" href="index.html">Back</a>
+        <div>
+          <p class="eyebrow">Manager</p>
+          <h1>Sign in to approvals</h1>
+          <p class="muted">Managers can view all submitted goals and receive submission notifications.</p>
+        </div>
+        <label>
+          Email
+          <input type="email" name="email" value="maria@company.com" required />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" value="password123" required />
+        </label>
+        <button class="primary-button" type="submit">Login as Manager</button>
+        <p class="form-error" role="alert"></p>
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
